@@ -14,7 +14,9 @@ sap.ui.jsview("ColourfulDynamicTile.ColourfulDynamicTile", {
 	*/ 
 	createContent : function(oController) {
     	jQuery.sap.require('sap.ushell.ui.tile.DynamicTile');
-		jQuery.sap.registerModulePath('controls', '/sap/bc/ui5_ui5/sap/zcustomtiles/controls');
+//    	var sPath = jQuery.sap.getModulePath("ColourfulDynamicTile");
+    	jQuery.sap.registerModulePath('controls', '/sap/bc/ui5_ui5/sap/zcustomtiles/controls');
+    	//jQuery.sap.registerModulePath('controls', './controls');
 		//jquery.sap.registerModulePath("utils")
 		jQuery.sap.require('controls.ColourfulDynamicTile');
 //		jQuery.sap.require('sap.ushell.ui.tile.StaticTile');

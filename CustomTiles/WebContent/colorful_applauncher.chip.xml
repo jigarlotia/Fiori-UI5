@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (c) 2012 SAP AG, All Rights Reserved -->
 <chip xmlns="http://schemas.sap.com/sapui2/services/Chip/1">
-	<implementation>
-		<sapui5>
-
-			<viewName>ColourfulDynamicTile.ColourfulDynamicTile.view.js
-			</viewName>
-		</sapui5>
-	</implementation>
-	<appearance>
-		<title>Colourful Dynamic Applauncher</title>
-		<description>Colourful Dynamic Applauncher Chip</description>
-	</appearance>
-	<contracts>
-		<consume id="configuration">
-			<parameters>
-				<parameter name="tileConfiguration"></parameter>
-				<parameter name="row">1</parameter>
-				<parameter name="col">1</parameter>
-			</parameters>
-		</consume>
-		<consume id="preview" />
-		<consume id="writeConfiguration" />
-		<consume id="configurationUi" />
-		<consume id="search" />
-		<consume id="refresh" />
-		<consume id="visible" />
-		<consume id="bag" />
-		<consume id="url" />
-	</contracts>
+    <implementation>
+        <sapui5>
+        
+            <viewName>ColourfulDynamicTile.ColourfulDynamicTile.view.js</viewName>
+        </sapui5>
+    </implementation>
+    <appearance>
+        <title>Colourful Dynamic Applauncher</title>
+        <description>Colourful Dynamic Applauncher Chip</description>
+    </appearance>
+    <contracts>
+        <consume id="configuration">
+            <parameters>
+                <parameter name="tileConfiguration"></parameter>
+                <parameter name="row">1</parameter>
+  			<parameter name="col">1</parameter>
+            </parameters>
+        </consume>
+        <consume id="preview" />
+        <consume id="writeConfiguration" />
+        <consume id="configurationUi" />
+        <consume id="search" />
+        <consume id="refresh" />
+        <consume id="visible" />
+        <consume id="bag" />
+        <consume id="url" />
+    </contracts>
 </chip>
