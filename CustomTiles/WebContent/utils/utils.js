@@ -160,4 +160,59 @@ this.sap = this.sap || {};
         return oData;
     };
     
+    
+    utils.utils.getConfigurationUi = function (oView, sViewName) {
+        var oViewData = oView.getViewData(),
+            oTileApi = oViewData.chip,
+            oConfigurationView,
+            oSemanticObjectSelector,
+            oApplicationType;
+
+        var oCurrentConfig = utils.utils.getConfiguration(oTileApi, true, true);
+
+        //verify user allow to edit (user locale = original Locate
+
+        var oConfigurationModel = new sap.ui.model.json.JSONModel({
+            config : oCurrentConfig,
+            // keep reference to the model in this model
+            // (to be able to update it directly on configuration changes)
+            tileModel : oView.getModel()
+        });
+
+        oConfigurationView = new sap.ui.view({
+            type : sap.ui.core.mvc.ViewType.XML,
+            viewData : oViewData,
+            viewName : sViewName
+        });
+
+        oConfigurationView.setModel(oConfigurationModel);
+
+        // initialize state of input fields depending on navigation_use_semantic_object
+        // navigation_semantic_objectInput</code> used in static and dynamic tiles
+        // semantic_objectInput used in action tile
+        oSemanticObjectSelector = oConfigurationView.byId("navigation_semantic_objectInput") || oConfigurationView.byId("semantic_objectInput");
+        if (oSemanticObjectSelector) {
+            oSemanticObjectSelector.getModel().setProperty("/enabled", oCurrentConfig.navigation_use_semantic_object);
+            oSemanticObjectSelector.getModel().setProperty("/value", oCurrentConfig.semantic_object || oCurrentConfig.navigation_semantic_object);
+        }
+        //Enable Application type radio button LPD_CUST/SAPUI5 depending on navigation_provider
+        //Application type is used in action tile configuration
+        //If navigation_provider value is 'LPD', then LPD_CUST radio button has to be selected.
+        oApplicationType = oConfigurationView.byId("typeLpd_cust");
+        if(oApplicationType){
+            if(oView.getModel().getProperty('/config/navigation_provider')=="LPD" || oView.getModel().getProperty('/config/navigation_provider')=='') {
+                oConfigurationView.byId("typeLpd_cust").setSelected(true);
+                oConfigurationView.byId("typeSapui5").setSelected(false);
+                sap.ushell.components.tiles.utils.displayLpdCustApplicationTypeFields(oConfigurationView);
+            }
+            else if(oView.getModel().getProperty('/config/navigation_provider')=="SAPUI5") {
+                oConfigurationView.byId("typeLpd_cust").setSelected(false);
+                oConfigurationView.byId("typeSapui5").setSelected(true);
+                sap.ushell.components.tiles.utils.displaySapui5ApplicationTypeFields(oConfigurationView);
+            }
+        }
+        return oConfigurationView;
+    };
+
+    
 }());

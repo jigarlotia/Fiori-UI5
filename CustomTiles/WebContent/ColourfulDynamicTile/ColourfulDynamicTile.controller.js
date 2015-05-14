@@ -89,7 +89,8 @@
             if (oTileApi.configurationUi.isEnabled()) {
                 oTileApi.configurationUi.setUiProvider(function () {
                     // attach configuration UI provider, which is essentially a components.tiles.dynamicapplauncher.Configuration
-                    var oConfigurationUi = sap.ushell.components.tiles.utils.getConfigurationUi(oView, "ColourfulDynamicTile.Configuration");
+                    //var oConfigurationUi = sap.ushell.components.tiles.utils.getConfigurationUi(oView, "ColourfulDynamicTile.Configuration");
+                	var oConfigurationUi = utils.utils.getConfigurationUi(oView, "ColourfulDynamicTile.Configuration");
                     oTileApi.configurationUi.attachCancel(that.onCancelConfiguration.bind(null, oConfigurationUi));
                     oTileApi.configurationUi.attachSave(that.onSaveConfiguration.bind(null, oConfigurationUi));
                     return oConfigurationUi;
