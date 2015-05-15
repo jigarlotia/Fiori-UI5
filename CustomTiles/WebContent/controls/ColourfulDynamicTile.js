@@ -12,9 +12,9 @@ sap.ushell.ui.tile.DynamicTile.extend("controls.ColourfulDynamicTile", {
 	metadata : {
 		properties : {
 			// Icon color property with default value to standard UI5 blue
-			iconColor : {
+			iconColour : {
 				type : "string",
-				defaultValue : "#007cc0"
+				//defaultValue : "#007cc0"
 			},
 			// Background color property with default value to white
 			bgColour : {
@@ -22,10 +22,18 @@ sap.ushell.ui.tile.DynamicTile.extend("controls.ColourfulDynamicTile", {
 				//defaultValue : "rgb(100, 100, 100)"
 			},
 			// Border color property with default value to standard UI5 blue
-			borderColor : {
+			borderColour : {
 				type : "string",
-				defaultValue : "#007cc0"
+				//defaultValue : "#007cc0"
+			},
+			titleFontColour : {
+				type : "string"
+			},
+			subTitleFontColour : {
+				type : "string"
 			}
+			
+			
 		}
 	}
 });

@@ -183,7 +183,7 @@
         },
         extractData : function (oData) {
             var name,
-                aKeys = ["results", "icon", "title", "number", "numberUnit", "info", "infoState", "infoStatus", "targetParams", "subtitle", "stateArrow", "numberState", "numberDigits", "numberFactor", "bgColour"];
+                aKeys = ["results", "icon", "title", "number", "numberUnit", "info", "infoState", "infoStatus", "targetParams", "subtitle", "stateArrow", "numberState", "numberDigits", "numberFactor", "bgColour", "titleFontColour", "subTitleFontColour", "iconColour"];
 
             if (typeof oData === "object" && Object.keys(oData).length === 1) {
                 name = Object.keys(oData)[0];
@@ -210,6 +210,10 @@
                     display_subtitle_text: oModel.getProperty("/config/display_subtitle_text"),
                     display_info_text: oModel.getProperty("/config/display_info_text"),
                     bgColour: oModel.getProperty("/config/bgColour"),
+                    titleFontColour: oModel.getProperty("/config/titleFontColour"),
+                    subTitleFontColour: oModel.getProperty("/config/subTitleFontColour"),
+                    iconColour: oModel.getProperty("/config/iconColour"),
+
                     display_number_unit : oModel.getProperty("/config/display_number_unit"),
                     service_url: oModel.getProperty("/config/service_url"),
                     service_refresh_interval: oModel.getProperty("/config/service_refresh_interval"),

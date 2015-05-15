@@ -24,10 +24,28 @@
 				liveChange="onConfigurationInputChange" valueHelpRequest="onIconValueHelpRequest"
 				showValueHelp="true" />
 
+<!-- 			<Label text="Use Sytlesheet for Tile Background Colour" />
+			<CheckBox id="useStylesheetBgColour" selected="{/config/use_stylesheet_bgColour}"
+				select="onCheckBoxChange" tooltip="{i18n>configuration.navigation_use_semantic_object.tooltip}" />
+ -->			
+
 
 			<Label text="Tile Background Colour" />
 			<common:ColorPicker id="bgColourInput"
 				colorString="{/config/bgColour}" tooltip="Tile Background Colour" />
+
+
+			<Label text="Title Font Colour" />
+			<common:ColorPicker id="titleFontColourInput"
+				colorString="{/config/titleFontColour}" tooltip="Title Font Colour" />
+
+			<Label text="Subtitle Font Colour" />
+			<common:ColorPicker id="subTitleFontColourInput"
+				colorString="{/config/subTitleFontColour}" tooltip="Subtitle Font Colour" />
+
+			<Label text="Icon Colour" />
+			<common:ColorPicker id="iconColourInput"
+				colorString="{/config/iconColour}" tooltip="Icon Colour" />
 
 			<!-- <Label text="Selected Background Colour" /> <Input id="bgColourSelected" 
 				value="{/config/bgColour}" tooltip="Tile Background Colour"/> -->

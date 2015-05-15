@@ -40,6 +40,9 @@ sap.ui.jsview("ColourfulDynamicTile.ColourfulDynamicTile", {
                 targetURL: "{/nav/navigation_target_url}",
                 highlightTerms: "{/search/display_highlight_terms}",
                 bgColour: "{/data/bgColour}",
+                titleFontColour: "{/data/titleFontColour}",
+                subTitleFontColour: "{/data/subTitleFontColour}",
+                iconColour: "{/data/iconColour}",
                 press : [ oController.onPress, oController ]
             }
         );

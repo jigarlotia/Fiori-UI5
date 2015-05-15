@@ -50,6 +50,9 @@ this.sap = this.sap || {};
         oConfig.display_number_unit = oConfig.display_number_unit || "";
         oConfig.display_number_factor = oConfig.display_number_factor || "";
         oConfig.bgColour = oConfig.bgColour || "";
+        oConfig.titleFontColour = oConfig.titleFontColour || "";
+        oConfig.subTitleFontColour = oConfig.subTitleFontColour || "";
+        oConfig.iconColour = oConfig.iconColour || "";
         oConfig.service_refresh_interval = oConfig.service_refresh_interval || 0;
         oConfig.service_url = oConfig.service_url || "";
         oConfig.navigation_target_url = oConfig.navigation_target_url || "";
@@ -133,6 +136,10 @@ this.sap = this.sap || {};
                 display_number_factor: oDynamicData.numberFactor || "",
                 display_search_keyword: oDynamicData.keywords || oConfig.display_search_keyword || "",
                 bgColour: oDynamicData.bgColour || oConfig.bgColour || "",
+                titleFontColour: oDynamicData.titleFontColour || oConfig.titleFontColour || "",
+                subTitleFontColour: oDynamicData.subTitleFontColour || oConfig.subTitleFontColour || "",
+                iconColour: oDynamicData.iconColour || oConfig.iconColour || "",
+
                 targetParams: []
             };
         if (oDynamicData.infoStatus) {

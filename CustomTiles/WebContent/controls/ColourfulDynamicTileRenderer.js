@@ -129,7 +129,7 @@
         oRm.writeAttributeEscaped("tabindex", "0");
         oRm.addClass("sapUshellTileBase");
         oRm.writeClasses();
-        oRm.write(" style=\" background-color: "+ oControl.getBgColour() +"; opacity: 1.0 ;\"");
+        oRm.write(" style=\" background-color: "+ oControl.getBgColour() +"; opacity: 1.0 ; border-color: "+ oControl.getBgColour() +";\"");
         oRm.write(">");
 
         // plain title + subtitle wrapper
@@ -144,6 +144,8 @@
         oRm.writeClasses();
         oRm.writeAttributeEscaped('title', sTileTitleTooltip);
         oRm.writeAccessibilityState(oControl, {label : translationBundle.getText("TileTitle_lable") + oControl.getTitle()});
+        oRm.write(" style=\" color: "+ oControl.getTitleFontColour() +";\"");
+        
         oRm.write(">");
         // note: this mustn't be escaped, as highlight already does that
         oRm.write(this.highlight(oControl.getHighlightTerms(), oControl.getTitle() || ""));
@@ -155,6 +157,7 @@
             oRm.addClass("sapUshellTileBaseSubtitle");
             oRm.writeClasses();
             oRm.writeAccessibilityState(oControl, {label : translationBundle.getText("TileSubTitle_lable") + oControl.getSubtitle()});
+            oRm.write(" style=\" color: "+ oControl.getSubTitleFontColour() +";\"");
             oRm.write(">");
             // note: this mustn't be escaped, as highlight already does that
             oRm.write(this.highlight(oControl.getHighlightTerms(), oControl.getSubtitle()));
@@ -172,6 +175,10 @@
         if (oControl.getIcon()) {
             oIcon = new sap.ui.core.Icon({src: oControl.getIcon()});
             oIcon.addStyleClass("sapUshellTileBaseIcon");
+            if (oControl.getIconColour()) {
+            	oIcon.setColor(oControl.getIconColour());
+            }
+           // oIcon.addStyleClass
             oRm.renderControl(oIcon);
         }
 
